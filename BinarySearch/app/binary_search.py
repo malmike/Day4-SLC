@@ -12,4 +12,31 @@ class BinarySearch(list):
             return self.binary_search(self.binary_list, search_item)
         else:
             raise TypeError
-    
+    def binary_search(self, a_list, item):
+        first = 0
+        last = len(a_list)-1
+        found = False
+        midpoint = 0
+        count = 0
+        while first<=last and found is False:
+            count += 1
+            midpoint = (first+last)//2
+            if a_list[midpoint] == item:
+                found = True
+                break
+            else:
+                if item < a_list[midpoint]:
+                    last = midpoint - 1
+                else:
+                    first = midpoint + 1
+        if a_list[midpoint] == item:
+            return {'count':count, 'index':midpoint}
+        else:
+            return {'count':count, 'index': -1}
+
+
+
+
+
+
+
