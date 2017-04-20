@@ -28,22 +28,22 @@ class BinarySearch(list):
             #Check that the last value in the list is not the search item
             elif self[last]==search_item:
                 found, index = True, last
-            #Check that the search item is not greater than the last item in the list or 
-            #less than the first item in the list
-            elif search_item > self[last] or search_item < self[first]:
-                found, index = True, -1
             #Loop through the list until the value is found or 
             #until the value in first is greater than that in last
             while first<=last and not found:
                 #Get the index at the midpoint between the index in first and that in last
                 midpoint = (first+last)//2
+                #Check that the search item is not greater than the last item in the list or 
+                #less than the first item in the list
+                if search_item > self[last] or search_item < self[first]:
+                    index = -1
+                    break
                 #Check whether the value is at the midpoint
-                if self[midpoint] == search_item:
+                elif self[midpoint] == search_item:
                     #Set found to true and index to the value in midpoint 
                     found,index = True, midpoint
-                else:
-                    #Increment the count by 1 to show the number of times the loop has occured
-                    count += 1
+                    break
+                else:                    
                     #Put the index of midpoint-1 to the last value if search item is less than
                     #value at midpoint
                     if search_item < self[midpoint]:
@@ -52,6 +52,8 @@ class BinarySearch(list):
                     #value at midpoint
                     else:
                         first = midpoint + 1
+                #Increment the count by 1 to show the number of times the loop has occured
+                count += 1
             #Return count and index at which the search item is, in a dictionary
             return {'count':count, 'index':index}
         else:
