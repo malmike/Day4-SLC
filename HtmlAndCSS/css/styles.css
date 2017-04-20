@@ -34,7 +34,7 @@ ul, li{
 }
 .nav_ul{
     float: right;
-    padding-right: 2em
+    padding-right: 2em;
 }
 .nav-li{
     position: relative;
@@ -44,11 +44,9 @@ ul, li{
 .g_apps_menu{
     display: none;
     position: absolute;
-    margin-right: 10em;
     background-color: floralwhite;
-    min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
+    padding: 2em 2em;
     left:-150px;
     z-index: 1;
 }
@@ -135,5 +133,11 @@ textarea:focus, input:focus{
 }
 .app-list{
     columns:3
+}
+
+.profile-image{
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
 }
 
