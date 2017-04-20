@@ -2,6 +2,7 @@ class BinarySearch(list):
     def __init__(self, a, b):
         if isinstance(a, int) and isinstance(b, int):
             self.binary_list =  [x*b for x in range(1,a+1)] 
+            #self.binary_list = [x for x in range(b,(a*b)+1,b)]
             self.length = len(self.binary_list)
         else:
             raise TypeError
